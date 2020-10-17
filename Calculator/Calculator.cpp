@@ -8,11 +8,12 @@ int pow(int a, int n);
 
 int main()
 {
+    system("title Basic Calculator");
     char choice;
     using namespace std;
     cout << "===========>Calculator<===========\n";
-    cout << "1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Raise to power\n";
-    
+    cout << "1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Raise to power\n6.Exit\n\n";
+    cout << "Choice: ";
     cin >> choice;
 
     switch (choice) 
@@ -21,18 +22,26 @@ int main()
         system("cls");
         add();
     break;
+
+
     case '2':
         system("cls");
         sub();
     break;
+
+
     case '3':
         system("cls");
         mul();
     break;
+
+
     case '4':
         system("cls");
         div();
     break;
+
+
     case '5':
         system("cls");
         int a;
@@ -44,6 +53,13 @@ int main()
         std::cin >> n;
         std::cout << pow(a, n);
     break;
+
+
+    case '6':
+        exit(0);
+    break;
+
+
     default:
         cout << "Nope.";
         exit(0);
