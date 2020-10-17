@@ -4,13 +4,14 @@ void add();
 void sub();
 void mul();
 void div();
+int pow(int a, int n);
 
 int main()
 {
     char choice;
     using namespace std;
     cout << "===========>Calculator<===========\n";
-    cout << "1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n";
+    cout << "1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Raise to power\n";
     
     cin >> choice;
 
@@ -33,7 +34,15 @@ int main()
         div();
     break;
     case '5':
-        exit(0);
+        system("cls");
+        int a;
+        int n;
+
+        std::cout << "Number: ";
+        std::cin >> a;
+        std::cout << "Raise to power: ";
+        std::cin >> n;
+        std::cout << pow(a, n);
     break;
     default:
         cout << "Nope.";
@@ -108,4 +117,10 @@ void div()
         system("cls");
         std::cout << "You can't divide by 0!";
     }
+}
+
+int pow(int a, int n)
+{
+    if (n == 0) return 1;
+    else return a * pow(a, n - 1);
 }
