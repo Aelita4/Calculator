@@ -4,7 +4,7 @@ void add();
 void sub();
 void mul();
 void div();
-int pow(int a, int n);
+double pow(int a, int n);
 
 int main()
 {
@@ -135,8 +135,19 @@ void div()
     }
 }
 
-int pow(int a, int n)
+double pow(int a, int n)
 {
+    bool isNegative = false;
+    if (n < 0)
+    {
+        n = -n;
+        isNegative = true;
+    }
+
     if (n == 0) return 1;
-    else return a * pow(a, n - 1);
+    else
+    {
+        if(isNegative) return 1 / (a * pow(a, n - 1));
+        else return a * pow(a, n - 1);
+    }
 }
